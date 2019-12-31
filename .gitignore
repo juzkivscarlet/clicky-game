@@ -1,3 +1,12 @@
+# MY FILES
+
+package-lock.json
+react-readme.md
+instructions.md
+
+
+# FILES IGNORED (by default) - CREATE-REACT-APP
+
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
 # dependencies
