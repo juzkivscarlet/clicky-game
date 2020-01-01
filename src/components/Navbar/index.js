@@ -2,16 +2,16 @@ import React from 'react';
 
 function NavbarElement(props) {
 	return (
-		<nav className='navbar navbar-expand-lg navbar-light bg-light'>
-			<h1 className='navbar-brand'>Clicky Game</h1>
+		<nav className='navbar navbar-expand-lg navbar-dark bg-dark'>
+			<h1 className='navbar-brand'>Geography Trivia</h1>
 
 			<div className='collapse navbar-collapse'>
 				<ul className='navbar-nav ml-auto'>
 					<li className='nav-item'>
-						<h5 className='nav-link'>Click an image to begin</h5>
+						<h5 className='nav-link'>Correct: {props.correct}</h5>
 					</li>
 					<li className='nav-item'>
-						<h5 className='nav-link'>Score: {props.score} | Top Score: {props.topScore}</h5>
+						<h5 className='nav-link'>Incorrect: {props.wrong}</h5>
 					</li>
 				</ul>
 			</div>
@@ -21,25 +21,21 @@ function NavbarElement(props) {
 
 class Navbar extends React.Component {
 	state = {
-		score: 0,
-		topScore: 0
+		correct: 0,
+		wrong: 0
 	}
 
-	incrementScore = () => {
-		this.setState({ score: this.state.score+1 });
+	incrementCorrect = () => {
+		this.setState({ correct: this.state.correct+1 });
 	}
 
-	resetScore = () => {
-		this.setState({ score: 0 });
-	}
-
-	incrementTopScore = () => {
-		this.setState({ topScore: this.state.topScore+1 });
+	incrementWrong = () => {
+		this.setState({ wrong: this.state.wrong+1 });
 	}
 
 	render() {
 		return (
-			<NavbarElement score={this.state.score} topScore={this.state.topScore} />
+			<NavbarElement correct={this.state.correct} wrong={this.state.wrong} />
 		);
 	}
 }
