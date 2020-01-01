@@ -8,7 +8,7 @@ import Navbar from './components/Navbar';
 function App() {
 	return (
 		<Wrapper>
-			<Navbar score='0' topScore='0' />
+			<Navbar />
 			<div className='container'></div>
 		</Wrapper>
 	);

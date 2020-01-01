@@ -1,6 +1,6 @@
 import React from 'react';
 
-function Navbar(props) {
+function NavbarElement(props) {
 	return (
 		<nav className='navbar navbar-expand-lg navbar-light bg-light'>
 			<h1 className='navbar-brand'>Clicky Game</h1>
@@ -17,6 +17,31 @@ function Navbar(props) {
 			</div>
 		</nav>
 	);
+}
+
+class Navbar extends React.Component {
+	state = {
+		score: 0,
+		topScore: 0
+	}
+
+	incrementScore = () => {
+		this.setState({ score: this.state.score+1 });
+	}
+
+	resetScore = () => {
+		this.setState({ score: 0 });
+	}
+
+	incrementTopScore = () => {
+		this.setState({ topScore: this.state.topScore+1 });
+	}
+
+	render() {
+		return (
+			<NavbarElement score={this.state.score} topScore={this.state.topScore} />
+		);
+	}
 }
 
 export default Navbar;
