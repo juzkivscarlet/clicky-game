@@ -1,5 +1,4 @@
 import React from 'react';
-// import logo from './logo.svg';
 import './App.css';
 
 import Wrapper from './components/Wrapper';
@@ -9,16 +8,30 @@ import Question from './components/Question';
 
 import questionsArr from './components/Question/questions';
 
-function App() {
-	return (
-		<Wrapper>
-			<Navbar />
-			<Head />
-			<div className='container'>
-				<Question ques={questionsArr[1]} />
-			</div>
-		</Wrapper>
-	);
+class App extends React.Component {
+	
+	state = {
+		count: 0,
+		questions: questionsArr
+	};
+
+	render() {
+		return (
+			<Wrapper>
+				<Navbar />
+				<Head />
+				<div className='container'>
+					<Question ques={this.state.questions[this.state.count]} />
+					<br/>
+					<Question ques={this.state.questions[this.state.count+1]} />
+					<br/>
+					<Question ques={this.state.questions[this.state.count+2]} />
+					<br/>
+					<Question ques={this.state.questions[this.state.count+3]} />
+				</div>
+			</Wrapper>
+		);
+	}
 }
 
 export default App;

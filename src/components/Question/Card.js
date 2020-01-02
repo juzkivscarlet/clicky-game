@@ -2,12 +2,16 @@ import React from 'react';
 
 function Card(props) {
     return (
-        <div className='card'>
+        <div className='card flex-fill text-white bg-dark'>
+
+            <div className='card-header'>{props.letter})</div>
+
             {props.imgUrl && 
                 <img src={props.imgUrl} className='card-img-top' alt='Answer thumbnail' />
             }
-            <div className='card-body'>
-                <h5 className='card-title text-center'>{props.text}</h5>
+
+            <div className='card-body text-center'>
+                <button type='button' className='btn btn-lg btn-primary text-center answer-btn' data-letter={props.letter}>{props.text}</button>
             </div>
 
             <div className='card-footer'>

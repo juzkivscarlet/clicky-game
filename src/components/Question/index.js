@@ -7,21 +7,21 @@ function Question(props) {
     let ques = props.ques;
     return (
         <div className='jumbotron'>
-            <h2 className='display-4'>{ques.question}</h2>
+            <h2 className='display-4 text-center'>{ques.question}</h2>
             <hr className='my-4'/>
 
-            <div className='card-deck d-flex justify-content-around'>
+            <div className='card-deck d-flex justify-content-around align-content-center'>
                 {ques.answerImgs ? 
-                    <div className='row'>
-                        <Card text={ques.answers[0].text} imgUrl={ques.answers[0].image.url} imgSource={ques.answers[0].image.source} />
-                        <Card text={ques.answers[1].text} imgUrl={ques.answers[1].image.url} imgSource={ques.answers[1].image.source} />
-                        <Card text={ques.answers[2].text} imgUrl={ques.answers[2].image.url} imgSource={ques.answers[2].image.source} />
+                    <div className='row mx-auto'>
+                        <Card text={ques.answers[0].text} imgUrl={ques.answers[0].image.url} imgSource={ques.answers[0].image.source} letter="A" />
+                        <Card text={ques.answers[1].text} imgUrl={ques.answers[1].image.url} imgSource={ques.answers[1].image.source} letter="B" />
+                        <Card text={ques.answers[2].text} imgUrl={ques.answers[2].image.url} imgSource={ques.answers[2].image.source} letter="C" />
                     </div>
                     : 
-                    <div className='row'>
-                        <Card text={ques.answers[0].text} imgUrl={null} imgSource="" />
-                        <Card text={ques.answers[1].text} imgUrl={null} imgSource="" />
-                        <Card text={ques.answers[2].text} imgUrl={null} imgSourc="" />
+                    <div className='row mx-auto'>
+                        <Card text={ques.answers[0].text} imgUrl={null} imgSource="" letter="A" />
+                        <Card text={ques.answers[1].text} imgUrl={null} imgSource="" letter="B" />
+                        <Card text={ques.answers[2].text} imgUrl={null} imgSourc="" letter="C" />
                     </div>
                 }
             </div><br/>
