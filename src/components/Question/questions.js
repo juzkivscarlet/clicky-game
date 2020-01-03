@@ -47,6 +47,10 @@ Answer(['13','8','12'], 'A', questionsArr[2]);
 questionsArr.push(new Question('What is the capital city of the US state, Alaska?'));
 Answer(['Ketchikan', 'Anchorage', 'Juneau'], 'C', questionsArr[3]);
 
+for(var i=0; i<questionsArr.length; i++) {
+	questionsArr[i].index = i+1;
+}
+
 console.log(questionsArr);
 
 export default questionsArr;

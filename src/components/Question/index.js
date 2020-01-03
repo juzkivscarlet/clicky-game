@@ -7,7 +7,8 @@ function Question(props) {
 	let ques = props.ques;
 	return (
 		<div className='jumbotron'>
-			<h2 className='display-4 text-center'>{ques.question}</h2>
+			<h2 className='display-4'>Question #{ques.index}</h2>
+			<p className='lead font-italic'>{ques.question}</p>
 			<hr className='my-4'/>
 
 			<div className='card-deck d-flex justify-content-around align-content-center'>
