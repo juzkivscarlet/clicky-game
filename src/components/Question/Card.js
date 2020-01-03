@@ -1,24 +1,25 @@
 import React from 'react';
 
 function Card(props) {
+    let answer = props.answer;
     return (
         <div className='card flex-fill text-white bg-dark'>
 
-            <div className='card-header'>{props.letter})</div>
+            <div className='card-header'>{answer.letter})</div>
 
-            {props.imgUrl && 
-                <img src={props.imgUrl} className='card-img-top' alt='Answer thumbnail' />
+            {answer.image && 
+                <img src={answer.image.url} className='card-img-top' alt='Answer thumbnail' />
             }
 
             <div className='card-body text-center'>
-                <button type='button' className='btn btn-lg btn-primary text-center answer-btn' data-letter={props.letter}>{props.text}</button>
+                <button type='button' className='btn btn-lg btn-primary text-center answer-btn' data-letter={answer.letter}>{answer.text}</button>
             </div>
 
             <div className='card-footer'>
-                {props.imgSource && 
+                {answer.image && 
                     <small className='text-muted'>
                         Image source: 
-                        <span className='font-italic'> {props.imgSource}</span>
+                        <span className='font-italic'> {answer.image.source}</span>
                     </small>
                 }
             </div>
